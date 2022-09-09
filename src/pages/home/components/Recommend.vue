@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <li class="item border-bottom" v-for="item of list" :key="item.id">
           <img class="item-img" :src="item.imgUrl" />
           <div class="item-info">
             <p class="item-title">{{item.title}}</p>
@@ -17,25 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'https://img1.qunarzz.com/sight/p0/1907/93/939cdcdee6cb1f31a3.water.jpg_256x160_158811e4.jpg',
-        title: '古龙峡漂流',
-        desc: '国际赛道级惊险体验'
-      }, {
-        id: '0002',
-        imgUrl: 'https://img1.qunarzz.com/sight/p0/1907/93/939cdcdee6cb1f31a3.water.jpg_256x160_158811e4.jpg',
-        title: '古龙峡漂流',
-        desc: '国际赛道级惊险体验'
-      }, {
-        id: '0003',
-        imgUrl: 'https://img1.qunarzz.com/sight/p0/1907/93/939cdcdee6cb1f31a3.water.jpg_256x160_158811e4.jpg',
-        title: '古龙峡漂流',
-        desc: '国际赛道级惊险体验'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
