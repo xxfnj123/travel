@@ -1,14 +1,17 @@
 <template>
-    <div class="container" @click="handleGallaryClick">
-      <div class="wrapper">
-        <swiper :options="swiperOptions">
-          <swiper-slide v-for="(item, index) of imgs" :key="index">
-            <img class="gallary-img" :src="item" />
-          </swiper-slide>
-          <div class="swiper-pagination" slot="pagination"></div>
-        </swiper>
-      </div>
+  <div class="container" @click="handleGallaryClick">
+    <div class="wrapper">
+      <swiper :options="swiperOptions">
+        <swiper-slide
+          v-for="(item, index) in imgs"
+          :key="index"
+        >
+          <img class="gallary-img" :src="item" />
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
     </div>
+  </div>
 </template>
 
 <script>
@@ -28,7 +31,7 @@ export default {
         pagination: '.swiper-pagination',
         paginationType: 'fraction',
         observeParents: true,
-        observe: true
+        observer: true
       }
     }
   },
